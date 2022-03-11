@@ -1,0 +1,30 @@
+* {
+	padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.hero-section {
+	height: 100%;
+	background-color: rebeccapurple;
+}
+
+.btn {
+	height: 40px;
+}
+
+.title {
+	max-width: 500px;
+}
+
+.svg-img {
+	max-width: 600px;
+}
+
+#icct-img {
+	max-width: 500px;
+}
+
+.card {
+	height: auto;
+}
