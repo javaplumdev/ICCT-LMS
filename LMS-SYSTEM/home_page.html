@@ -24,14 +24,15 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<script src="https://unpkg.com/scrollreveal"></script>
 		<link rel="stylesheet" href="style.css" />
-		<title>Subject Page | LMS</title>
+		<title>ICCT LMS | Home page</title>
 	</head>
 	<body>
-		<header>
-			<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+		<header class="mb-5" data-mdb-sticky-position="top">
+			<nav class="navbar navbar-expand-md bg-light navbar-light shadow">
 				<div class="container">
-					<a href="#" class="navbar-brand">ICCT</a>
+					<a href="#" class="navbar-brand">ICCT LMS | Home page</a>
 
 					<button
 						class="navbar-toggler"
@@ -44,6 +45,29 @@
 
 					<div class="collapse navbar-collapse" id="navmenu">
 						<ul class="navbar-nav ms-auto">
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Home</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Profile</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Classes</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Attendance</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="./subject page/subject_page.html" class="nav-link"
+									>List of Subjects</a
+								>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Messages</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Exercises</a>
+							</li>
 							<li class="nav-item">
 								<a href="#" class="nav-link">Logout</a>
 							</li>
@@ -60,27 +84,41 @@
 						class="col-md mb-2 h-100 sticky-md-top d-none d-sm-block text-light"
 					>
 						<div class="profile p-2 bg-primary rounded mb-2">
-							<p class="p-2">OL22N13 MECAREZ JR., CHARLITO D.R.</p>
+							<p class="p-2">THIS WILL BE THE USER'S NAME</p>
 						</div>
 
 						<div class="dashboard p-2 bg-primary rounded">
 							<ul>
 								<li class="list-unstyled mb-2">
+									<a href="#" class="text-light text-decoration-none">Home</a>
+								</li>
+								<li class="list-unstyled mb-2">
 									<a href="#" class="text-light text-decoration-none"
-										>Dashboard</a
+										>Profile</a
 									>
 								</li>
-								<li class="list-unstyled mb-2">
-									<a href="#" class="text-light text-decoration-none">Class</a>
-								</li>
+
 								<li class="list-unstyled mb-2">
 									<a href="#" class="text-light text-decoration-none"
-										>Subjects</a
+										>Classes</a
 									>
 								</li>
 								<li class="list-unstyled mb-2">
 									<a href="#" class="text-light text-decoration-none"
 										>Attendance</a
+									>
+								</li>
+
+								<li class="list-unstyled mb-2">
+									<a
+										href="./List of subjects page/list_of_subjects.html"
+										class="text-light text-decoration-none"
+										>List of Subjects</a
+									>
+								</li>
+								<li class="list-unstyled mb-2">
+									<a href="#" class="text-light text-decoration-none"
+										>Messages</a
 									>
 								</li>
 								<li class="list-unstyled mb-2">
@@ -92,18 +130,26 @@
 						</div>
 					</div>
 					<div class="col-md-6 mx-md-2">
-						<h3 class="my-3">List Of Subjects</h3>
+						<form class="bg-light p-4 rounded">
+							<textarea
+								class="form-control"
+								rows="3"
+								placeholder="Enter your notes here."
+								id="textarea"
+							></textarea>
+
+							<div class="div-forms py-3 d-flex justify-content-between">
+								<div class="div">
+									<small class="alert"></small>
+								</div>
+								<button class="btn btn-primary" id="content-post">Post</button>
+							</div>
+						</form>
+
+						<h3 class="my-3">Announcement</h3>
 						<hr />
 
-						<div class="contents bg-light p-4 rounded mt-3">
-							CAPS01 <br />
-							<br />
-							CISCO02 <br />
-							<br />
-							IAS01 <br />
-							<br />
-							IPT01
-						</div>
+						<div class="feed-container d-flex flex-column-reverse"></div>
 					</div>
 					<div class="col-md d-none d-md-block rounded p-4 h-100 sticky-sm-top">
 					</div>
@@ -116,6 +162,6 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
-		<script src="app.js"></script>
+		<script type="module" src="app.js"></script>
 	</body>
 </html>

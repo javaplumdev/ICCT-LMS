@@ -1,5 +1,6 @@
-import { feedData } from './feed.js';
+import { feedData } from './feedData.js';
 
+//Selectors
 const feedContainer = document.querySelector('.feed-container');
 const alert = document.querySelector('.alert');
 
@@ -10,15 +11,14 @@ const contentPost = document.getElementById('content-post');
 const date = new Date();
 
 // For converting the 24hrs to 12hrs
-date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
 
-//Changing if the AM or PM
-// let time;
-// if (date.getHours() < 12) {
-// 	time.innerText = 'AM';
-// } else {
-// 	time.innerText = 'PM';
-// }
+const time = date.toLocaleString('en-US', {
+	hour: 'numeric',
+	minute: 'numeric',
+	hour12: true,
+});
+
+console.log(time);
 
 contentPost.addEventListener('click', function (e) {
 	e.preventDefault();
@@ -29,10 +29,13 @@ contentPost.addEventListener('click', function (e) {
 		const contentMessage = document.createElement('div');
 
 		contentMessage.innerHTML = `
-            <div class="contents bg-light p-4 rounded mt-3 "> 
+            <div class="content-post bg-light p-4 rounded mt-3">
             <div class="detailsContent">
-                    <h5>This is the user's name</h5>
-                    <small>${date.getMonth()}/${date.getDate()}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}</small>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h6>This is the user's name</h6>
+                        <button class="btn-close" aria-label="Close"></button>
+                    </div>
+                    <small class="py-2">${date.getMonth()}/${date.getDate()}/${date.getFullYear()} - ${time}</small>
                 <div class="details-content border p-2">
                     <p>${formContent.value}</p>
                 </div>
@@ -42,12 +45,27 @@ contentPost.addEventListener('click', function (e) {
 
 		feedContainer.appendChild(contentMessage);
 
+		// This code is for deleting posts
+		const contentPostCollection =
+			document.getElementsByClassName('content-post');
+
+		for (let i = 0; i < contentPostCollection.length; i++) {
+			const closeButton = contentPostCollection[i];
+
+			closeButton.addEventListener('click', function (event) {
+				const closeButtonClicked = event.target;
+
+				closeButtonClicked.parentElement.parentElement.parentElement.remove();
+			});
+		}
+
 		formContent.value = '';
 		alert.innerHTML = `<small class="text-primary">Posted!</small>`;
 		console.log('posted');
 	}
 });
 
+// For printing all of the subjects
 feedData.forEach((i) => {
 	const subjectsFeed = document.createElement('div');
 

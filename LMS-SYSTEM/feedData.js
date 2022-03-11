@@ -1,16 +1,14 @@
+// ALl of the systems frontend data will comes here
+
 export let feedData = [
 	{
 		subjectName: 'MATH',
 		instruction: 'Sample',
+		subjectLink: '../subjects page/math.html',
 	},
 	{
 		subjectName: 'OLSP01',
 		instruction: 'Sample2',
-	},
-];
-
-export let questionsData = [
-	{
-		question1: 'gwapo ba ako?',
+		subjectLink: 'OLSP01.html',
 	},
 ];

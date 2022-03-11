@@ -4,7 +4,6 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -24,18 +23,14 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<script src="https://unpkg.com/scrollreveal"></script>
-		<link rel="stylesheet" href="style.css" />
-		<title>ICCT LMS | Home page</title>
+		<link rel="stylesheet" href="../style.css" />
+		<title>ICCT LMS | Math</title>
 	</head>
 	<body>
-		<header class="mb-5" data-mdb-sticky-position="top">
-			<nav
-				class="navbar navbar-expand-md bg-light navbar-light shadow "
-			>
+		<header>
+			<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
 				<div class="container">
-					
-					<a href="#" class="navbar-brand">ICCT | LMS</a>
+					<a href="#" class="navbar-brand">ICCT</a>
 
 					<button
 						class="navbar-toggler"
@@ -61,7 +56,9 @@
 								<a href="#" class="nav-link">Attendance</a>
 							</li>
 							<li class="nav-item d-block d-sm-none">
-								<a href="#" class="nav-link">List of Subjects</a>
+								<a href="./subject page/subject_page.html" class="nav-link"
+									>List of Subjects</a
+								>
 							</li>
 							<li class="nav-item d-block d-sm-none">
 								<a href="#" class="nav-link">Messages</a>
@@ -76,7 +73,7 @@
 					</div>
 				</div>
 			</nav>
-		</headerw>
+		</header>
 
 		<main class="mt-3 p-3">
 			<div class="container">
@@ -91,7 +88,9 @@
 						<div class="dashboard p-2 bg-primary rounded">
 							<ul>
 								<li class="list-unstyled mb-2">
-									<a href="#" class="text-light text-decoration-none"
+									<a
+										href="../home_page.html"
+										class="text-light text-decoration-none"
 										>Home</a
 									>
 								</li>
@@ -100,7 +99,7 @@
 										>Profile</a
 									>
 								</li>
-								
+
 								<li class="list-unstyled mb-2">
 									<a href="#" class="text-light text-decoration-none"
 										>Classes</a
@@ -111,9 +110,11 @@
 										>Attendance</a
 									>
 								</li>
-								
+
 								<li class="list-unstyled mb-2">
-									<a href="#" class="text-light text-decoration-none"
+									<a
+										href="../List of subjects page/list_of_subjects.html"
+										class="text-light text-decoration-none"
 										>List of Subjects</a
 									>
 								</li>
@@ -132,26 +133,34 @@
 					</div>
 					<div class="col-md-6 mx-md-2">
 						<form class="bg-light p-4 rounded">
-							<textarea
-								class="form-control"
-								rows="3"
-								placeholder="Enter your notes here."
-								id="textarea"
-							></textarea>
-
-							<div class="div-forms py-3 d-flex justify-content-between">
-								<div class="div"> 
-									<small class="alert"></small>
-								</div>
-								<button class="btn btn-primary" id="content-post">Post</button>
-							</div>
+							<h3> MATH </h3>
 						</form>
 
-						<h3 class="my-3">Announcement</h3>
 						<hr />
 
-						
-						<div class="feed-container d-flex flex-column-reverse"></div>
+						<div class="contents bg-light p-4 rounded mt-3">
+							<div class="div d-flex justify-content-between">
+								<div class="contents-titles">
+									<h4>QUIZ</h4>
+								</div>
+								<button class="btn btn-primary h-25">Take quiz</button>
+							</div>
+							<br />
+							<div class="contents-details border p-2">
+								<div class="row">
+									<div class="col">
+										<p>
+											Chapter &emsp; &emsp; &emsp; Title &emsp; &emsp; &emsp;
+											Due Date &emsp; &emsp; No. Items
+										</p>
+										<p align="left">
+											&ensp; 01 &emsp; &emsp; &emsp; Article Writing <br />
+											&emsp; &emsp; &emsp; &emsp; tips for Beginners
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="col-md d-none d-md-block rounded p-4 h-100 sticky-sm-top">
 					</div>
@@ -164,7 +173,6 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
-		<script type="module" src="app.js"></script>
-		
+		<script type="module" src="../subjects page/subject_page.js"></script>
 	</body>
 </html>
