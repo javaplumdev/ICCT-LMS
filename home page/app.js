@@ -1,12 +1,29 @@
-import { subjectData } from './feed.js';
+import { feedData } from './feed.js';
 
 const feedContainer = document.querySelector('.feed-container');
+const alert = document.querySelector('.alert');
 
-subjectData.forEach((i) => {
-	const announcementFeed = document.createElement('div');
+const formContent = document.getElementById('textarea');
+const contentPost = document.getElementById('content-post');
 
-	announcementFeed.innerHTML = ` 
-    <div class="contents bg-light p-4 rounded mt-3">
+contentPost.addEventListener('click', function (e) {
+	e.preventDefault();
+
+	if (formContent.value == '') {
+		alert.innerHTML = `<small class="text-danger">Please enter an input!</small>`;
+	} else {
+		formContent.value = '';
+		alert.innerHTML = `<small class="text-primary">Posted!</small>`;
+		console.log('posted');
+	}
+});
+
+feedData.forEach((i) => {
+	const subjectsFeed = document.createElement('div');
+	const contentFeed = document.createElement('div');
+
+	subjectsFeed.innerHTML = ` 
+    <div class="contents bg-light p-4 rounded mt-3 ">
         <div class="div d-flex justify-content-between">
             <div class="contents-titles">
                 <h4 class="subjectTitle">${i.subjectName}</h4>
@@ -17,7 +34,7 @@ subjectData.forEach((i) => {
                     ></p
                     >
                 </div>
-                    <a href="./question.html"><button class="btn btn-primary">Take quiz</button></a>
+                    <a href="#"><button class="btn btn-primary">Take quiz</button></a>
                 </div>
 
 
@@ -33,10 +50,9 @@ subjectData.forEach((i) => {
             </div>
         </div>
     </div>
-
     `;
 
-	feedContainer.appendChild(announcementFeed);
+	feedContainer.appendChild(subjectsFeed);
 });
 
 // For animation javascript

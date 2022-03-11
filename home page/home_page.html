@@ -35,7 +35,7 @@
 			>
 				<div class="container">
 					
-					<a href="#" class="navbar-brand">ICCT Learning Management System</a>
+					<a href="#" class="navbar-brand">ICCT | LMS</a>
 
 					<button
 						class="navbar-toggler"
@@ -62,6 +62,9 @@
 							</li>
 							<li class="nav-item d-block d-sm-none">
 								<a href="#" class="nav-link">List of Subjects</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Messages</a>
 							</li>
 							<li class="nav-item d-block d-sm-none">
 								<a href="#" class="nav-link">Exercises</a>
@@ -116,6 +119,11 @@
 								</li>
 								<li class="list-unstyled mb-2">
 									<a href="#" class="text-light text-decoration-none"
+										>Messages</a
+									>
+								</li>
+								<li class="list-unstyled mb-2">
+									<a href="#" class="text-light text-decoration-none"
 										>Exercises</a
 									>
 								</li>
@@ -128,11 +136,14 @@
 								class="form-control"
 								rows="3"
 								placeholder="Enter your notes here."
+								id="textarea"
 							></textarea>
 
 							<div class="div-forms py-3 d-flex justify-content-between">
-								<div class="div"> </div>
-								<button class="btn btn-primary">Post</button>
+								<div class="div"> 
+									<small class="alert"></small>
+								</div>
+								<button class="btn btn-primary" id="content-post">Post</button>
 							</div>
 						</form>
 
@@ -140,7 +151,7 @@
 						<hr />
 
 						
-						<div class="feed-container"></div>
+						<div class="feed-container d-flex flex-column-reverse"></div>
 					</div>
 					<div class="col-md d-none d-md-block rounded p-4 h-100 sticky-sm-top">
 					</div>

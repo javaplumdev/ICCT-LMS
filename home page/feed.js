@@ -1,11 +1,7 @@
-export let subjectData = [
+export let feedData = [
 	{
 		subjectName: 'MATH',
 		instruction: 'Sample',
-	},
-	{
-		subjectName: 'OLSP01',
-		instruction: 'Sample2',
 	},
 	{
 		subjectName: 'OLSP01',
