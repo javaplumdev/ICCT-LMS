@@ -1,3 +1,5 @@
+// This bunch of code is just for javascript animation
+
 const home = document.querySelector('.home');
 const about = document.querySelector('.about');
 const system = document.querySelector('.system');

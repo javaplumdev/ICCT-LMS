@@ -2,13 +2,27 @@
 
 export let feedData = [
 	{
-		subjectName: 'MATH',
-		instruction: 'Sample',
+		subjectName: 'Math',
+		quizDetails: {
+			numberOfItems: 20,
+			chapter: 1,
+			instruction:
+				'MULTIPLE CHOICE. Read and understand the statement carefully and choose the letter of the correct answer.',
+			title: 'Article Writing Tips For Beginners',
+			quizLengthTime: 5,
+		},
 		subjectLink: '../subjects page/math.html',
 	},
 	{
-		subjectName: 'OLSP01',
-		instruction: 'Sample2',
-		subjectLink: 'OLSP01.html',
+		subjectName: 'Filipino',
+		quizDetails: {
+			numberOfItems: 10,
+			chapter: 1,
+			instruction:
+				'MULTIPLE CHOICE. Read and understand the statement carefully and choose the letter of the correct answer.',
+			title: 'Article Writing Tips For In Filo',
+			quizLengthTime: 5,
+		},
+		subjectLink: '../subjects page/filipino.html',
 	},
 ];

@@ -1,9 +1,11 @@
+// Importing all of the data
 import { feedData } from './feedData.js';
 
-//Selectors
+// Selectors by class
 const feedContainer = document.querySelector('.feed-container');
 const alert = document.querySelector('.alert');
 
+// Selectors by ID
 const formContent = document.getElementById('textarea');
 const contentPost = document.getElementById('content-post');
 
@@ -11,23 +13,24 @@ const contentPost = document.getElementById('content-post');
 const date = new Date();
 
 // For converting the 24hrs to 12hrs
-
 const time = date.toLocaleString('en-US', {
 	hour: 'numeric',
 	minute: 'numeric',
 	hour12: true,
 });
 
-console.log(time);
-
+// This block of code is for the user posts
 contentPost.addEventListener('click', function (e) {
+	// Preventing the page to reload
 	e.preventDefault();
 
+	// Checking if the user has enter a value or not
 	if (formContent.value == '') {
 		alert.innerHTML = `<small class="text-danger">Please enter an input!</small>`;
 	} else {
 		const contentMessage = document.createElement('div');
 
+		// Printing the code
 		contentMessage.innerHTML = `
             <div class="content-post bg-light p-4 rounded mt-3">
             <div class="detailsContent">
@@ -43,39 +46,45 @@ contentPost.addEventListener('click', function (e) {
             </div>
         `;
 
+		// Appending the contentMessage from the feed container
 		feedContainer.appendChild(contentMessage);
 
 		// This code is for deleting posts
 		const contentPostCollection =
 			document.getElementsByClassName('content-post');
 
+		// When the user clicked the close button by the time it was posted, it can delete immediately
 		for (let i = 0; i < contentPostCollection.length; i++) {
 			const closeButton = contentPostCollection[i];
 
 			closeButton.addEventListener('click', function (event) {
 				const closeButtonClicked = event.target;
-
 				closeButtonClicked.parentElement.parentElement.parentElement.remove();
 			});
 		}
 
+		// Remove the form content value by the time it was posted
 		formContent.value = '';
+
+		// Telling the user that the post was posted
 		alert.innerHTML = `<small class="text-primary">Posted!</small>`;
+
+		// Checking if the content is posted or not
 		console.log('posted');
 	}
 });
 
 // For printing all of the subjects
-feedData.forEach((i) => {
+feedData.forEach((props) => {
 	const subjectsFeed = document.createElement('div');
 
 	subjectsFeed.innerHTML = ` 
     <div class="contents bg-light p-4 rounded mt-3 ">
         <div class="div d-flex justify-content-between">
             <div class="contents-titles">
-                <h4 class="subjectTitle">${i.subjectName}</h4>
+                <h4 class="subjectTitle">${props.subjectName}</h4>
                     <p
-                    >Quiz 1 : Chapter 1 <br />
+                    >Quiz 1 : Chapter ${props.quizDetails.chapter} <br />
                     <small class="text-muted"
                     >Dute date: March 20, 11:59PM</small
                     ></p
@@ -88,10 +97,10 @@ feedData.forEach((i) => {
                 <div class="contents-details border p-2">
                     <div class="row">
                         <div class="col">
-                        <p>Title and Instruction: </p>
-                        <p>20 questions ● 60 minutes</p>
+                        <p>Title: ${props.quizDetails.title}</p>
+                        <p>${props.quizDetails.numberOfItems} questions ● ${props.quizDetails.quizLengthTime} minutes</p>
                         <p
-                        >${i.instruction}</p
+                        >${props.quizDetails.instruction}</p
                         >
                 </div>
             </div>
@@ -102,8 +111,7 @@ feedData.forEach((i) => {
 	feedContainer.appendChild(subjectsFeed);
 });
 
-// For animation javascript
-
+// For javascript animation
+// We used scroll reveal library for this system
 const contents = document.querySelector('.content');
-
 ScrollReveal().reveal('.contents', { delay: 500 });
