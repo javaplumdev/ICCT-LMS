@@ -6,12 +6,42 @@ const alert = document.querySelector('.alert');
 const formContent = document.getElementById('textarea');
 const contentPost = document.getElementById('content-post');
 
+//For date
+const date = new Date();
+
+// For converting the 24hrs to 12hrs
+date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+
+//Changing if the AM or PM
+// let time;
+// if (date.getHours() < 12) {
+// 	time.innerText = 'AM';
+// } else {
+// 	time.innerText = 'PM';
+// }
+
 contentPost.addEventListener('click', function (e) {
 	e.preventDefault();
 
 	if (formContent.value == '') {
 		alert.innerHTML = `<small class="text-danger">Please enter an input!</small>`;
 	} else {
+		const contentMessage = document.createElement('div');
+
+		contentMessage.innerHTML = `
+            <div class="contents bg-light p-4 rounded mt-3 "> 
+            <div class="detailsContent">
+                    <h5>This is the user's name</h5>
+                    <small>${date.getMonth()}/${date.getDate()}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}</small>
+                <div class="details-content border p-2">
+                    <p>${formContent.value}</p>
+                </div>
+            </div>
+            </div>
+        `;
+
+		feedContainer.appendChild(contentMessage);
+
 		formContent.value = '';
 		alert.innerHTML = `<small class="text-primary">Posted!</small>`;
 		console.log('posted');
@@ -20,7 +50,6 @@ contentPost.addEventListener('click', function (e) {
 
 feedData.forEach((i) => {
 	const subjectsFeed = document.createElement('div');
-	const contentFeed = document.createElement('div');
 
 	subjectsFeed.innerHTML = ` 
     <div class="contents bg-light p-4 rounded mt-3 ">
