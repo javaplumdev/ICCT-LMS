@@ -8,6 +8,8 @@ const listOfSubjects = document.querySelector('.subject-container');
 feedData.forEach((props) => {
 	const subjectsFeed = document.createElement('div');
 
+	console.log(props.subjectName);
+
 	subjectsFeed.innerHTML = `
         <div class="contents bg-light p-4 rounded mt-3 ">
             <div class="div d-flex justify-content-between">
