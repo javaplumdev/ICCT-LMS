@@ -11,7 +11,7 @@ export let feedData = [
 			title: 'Article Writing Tips For Beginners',
 			quizLengthTime: 5,
 		},
-		subjectLink: '../subjects page/math.html',
+		subjectLink: '../subjects page/subject_page.html',
 	},
 	{
 		subjectName: 'Filipino',
@@ -23,6 +23,6 @@ export let feedData = [
 			title: 'Article Writing Tips For In Filo',
 			quizLengthTime: 5,
 		},
-		subjectLink: '../subjects page/filipino.html',
+		subjectLink: '../subjects page/subject_page.html',
 	},
 ];

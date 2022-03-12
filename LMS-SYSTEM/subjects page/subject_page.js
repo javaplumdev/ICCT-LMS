@@ -1,16 +1,16 @@
 // Importing the feed data
 import { feedData } from '../feedData.js';
 
-// Selectors
-var headContent = document.getElementsByTagName('title')[0].innerHTML;
-// The hard coded title from the page is the way of getting a specific properties from the feed data
-// Replacing the inner html of the head content
-var newHeadContent = headContent.replace('ICCT LMS | ', '');
+const subjectData = localStorage.subjectName;
 
 // Printing the feed data based in the if else code
 feedData.forEach((props) => {
-	// Imporing a specific properties based in this if else code
-	if (newHeadContent === props.subjectName) {
+	if (subjectData == props.subjectName) {
+		// For specific head title
+		document.getElementsByTagName(
+			'title'
+		)[0].innerHTML = `ICCT LMS | ${props.subjectName}`;
+
 		// Selectors
 		const quizContainer = document.querySelector('.quiz-container');
 		const subjectTitle = document.querySelector('.subject-title');
