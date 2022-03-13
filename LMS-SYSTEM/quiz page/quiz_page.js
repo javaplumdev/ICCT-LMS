@@ -1,42 +1,73 @@
 import { feedData } from '../feedData.js';
-
 const questionData = localStorage.question;
+const questionKeyInHomePage = localStorage.questionKeyInHomePage;
 
-// feedData.forEach((props) => {
-// 	if (questionData === props.question) {
-// 		console.log(props.questions);
-// 	}
-// });
+feedData.forEach((props) => {
+	if (questionData == props.question) {
+		const questions = props.questions;
 
-const data = [
-	{
-		subjectName: 'Math',
-		quizDetails: {
-			numberOfItems: 20,
-			chapter: 1,
-			instruction:
-				'MULTIPLE CHOICE. Read and understand the statement carefully and choose the letter of the correct answer.',
-			title: 'Article Writing Tips For Beginners',
-			quizLengthTime: 5,
-		},
-		subjectLink: '../subjects page/subject_page.html',
-		quizLink: '../quiz page/quiz_page.html',
-		question: 'math 1',
-		questions: [
-			{
-				tanong: 'Pogi ba ako?',
-				question: 'oo',
-			},
-			{
-				tanong: 'HIndi ba ako pogi?',
-				question: 'oo',
-			},
-		],
-	},
-];
+		document.getElementsByTagName(
+			'title'
+		)[0].innerHTML = `ICCT LMS Quiz | ${props.subjectName}`;
 
-data.forEach((props, index) => {
-	console.log(props.questions[index].tanong);
+		const quizTitle = document.querySelector('.quiz-title');
+
+		quizTitle.innerHTML = `
+            <div class="d-flex align-items-center justify-content-around p-4">
+                <div>
+                    <div class="row">
+                    <p>Subject: <b>${props.subjectName}</b></p>
+                    </div>
+                    <div class="row">
+                    <p>Title: ${props.quizDetails.title}</p>
+                    </div>
+                    <div class="row">
+                        <p>${props.quizDetails.instruction}</p>
+                    </div>
+                    <div class="row">
+                        <p>No. Items: ${questions.length}</p>
+                    </div>
+                </div>
+            </div>
+            
+        `;
+
+		questions.forEach((props) => {
+			const quizContainer = document.querySelector('.quiz-container');
+
+			const quizContainerDiv = document.createElement('div');
+
+			quizContainerDiv.innerHTML = `
+                    <div class="bg-light shadow rounded p-4 my-4">
+                        <div class="d-flex align-items-center">
+                            <p >${props.questionNum})</p>
+                            <h4 class="mx-2" id="question">${props.question}</h4>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>
+                                <input type="radio" id="a" name="${props.questionNum}" class="answer" />
+                                <label id="a_text" for="a">${props.a}</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="b" name="${props.questionNum}" class="answer" />
+                                <label id="b_text" for="b">${props.b}</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="c" name="${props.questionNum}" class="answer" />
+                                <label id="c_text" for="c">${props.c}</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="d" name="${props.questionNum}" class="answer" />
+                                <label id="d_text" for="d">${props.d}</label>
+                            </li>
+                        </ul>
+                    </div>
+                        
+                    `;
+
+			quizContainer.appendChild(quizContainerDiv);
+		});
+	}
 });
 
 // For javascript animation

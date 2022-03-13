@@ -90,7 +90,7 @@ feedData.forEach((props) => {
                     ></p
                     >
                 </div>
-                    <a href="#"><button class="btn btn-primary">Take quiz</button></a>
+                    <button class="view-quiz btn btn-primary h-25">Take quiz</button>
                 </div>
 
 
@@ -98,7 +98,7 @@ feedData.forEach((props) => {
                     <div class="row">
                         <div class="col">
                         <p>Title: ${props.quizDetails.title}</p>
-                        <p>${props.quizDetails.numberOfItems} questions ● ${props.quizDetails.quizLengthTime} minutes</p>
+                        <p>${props.questions.length} questions ● ${props.quizDetails.quizLengthTime} minutes</p>
                         <p
                         >${props.quizDetails.instruction}</p
                         >
@@ -110,6 +110,23 @@ feedData.forEach((props) => {
 
 	feedContainer.appendChild(subjectsFeed);
 });
+
+function goToQuiz() {
+	const viewquiz = document.getElementsByClassName('view-quiz');
+
+	for (let i = 0; i < viewquiz.length; i++) {
+		const button = viewquiz[i];
+
+		button.addEventListener('click', function () {
+			// Having local storage so that other javascript files can access the local data
+			localStorage.setItem('question', feedData[i].question);
+
+			location.href = `${feedData[i].quizLinkAtHomPage}`;
+		});
+	}
+}
+
+goToQuiz();
 
 // For javascript animation
 // We used scroll reveal library for this system

@@ -4,7 +4,6 @@ export let feedData = [
 	{
 		subjectName: 'Math',
 		quizDetails: {
-			numberOfItems: 20,
 			chapter: 1,
 			instruction:
 				'MULTIPLE CHOICE. Read and understand the statement carefully and choose the letter of the correct answer.',
@@ -13,6 +12,7 @@ export let feedData = [
 		},
 		subjectLink: '../subjects page/subject_page.html',
 		quizLink: '../quiz page/quiz_page.html',
+		quizLinkAtHomPage: './quiz page/quiz_page.html',
 		question: 'math 1',
 		questions: [
 			{
@@ -21,30 +21,54 @@ export let feedData = [
 			},
 		],
 	},
+	//******************************************************************** */
 	{
 		subjectName: 'Math',
 		quizDetails: {
-			numberOfItems: 10,
 			chapter: 1,
 			instruction:
 				'MULTIPLE CHOICE. Read and understand the statement carefully and choose the letter of the correct answer.',
-			title: 'Article Writing Tips For Beginners',
+			title: 'Basic computing',
 			quizLengthTime: 5,
 		},
 		subjectLink: '../subjects page/subject_page.html',
 		quizLink: '../quiz page/quiz_page.html',
+		quizLinkAtHomPage: './quiz page/quiz_page.html',
 		question: 'math 2',
 		questions: [
 			{
-				tanong: 'Pogi ba ako?',
-				question: 'oo',
+				questionNum: 1,
+				question: 'Pogi ba ako?',
+				a: 'oo',
+				b: 'hindi',
+				c: 'slight',
+				d: 'ew',
+				correct: 'a',
+			},
+			{
+				questionNum: 2,
+				question: 'Kung hindi ako, bakit siya?',
+				a: 'oo',
+				b: 'hindi',
+				c: 'slight',
+				d: 'ew',
+				correct: 'a',
+			},
+			{
+				questionNum: 3,
+				question: 'Pogi ba siya?',
+				a: 'oo',
+				b: 'hindi',
+				c: 'slight',
+				d: 'ew',
+				correct: 'a',
 			},
 		],
 	},
+	//******************************************************************** */
 	{
 		subjectName: 'Filipino',
 		quizDetails: {
-			numberOfItems: 10,
 			chapter: 1,
 			instruction:
 				'MULTIPLE CHOICE. Read and understand the statement carefully and choose the letter of the correct answer.',
@@ -53,6 +77,7 @@ export let feedData = [
 		},
 		subjectLink: '../subjects page/subject_page.html',
 		quizLink: '../quiz page/quiz_page.html',
+		quizLinkAtHomPage: './quiz page/quiz_page.html',
 		question: 'filipino 2',
 		questions: [
 			{
