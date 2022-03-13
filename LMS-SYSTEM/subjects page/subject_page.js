@@ -37,7 +37,7 @@ filterSameData.forEach((props) => {
             <small class="text-secondary">Chapter: ${props.quizDetails.chapter}</small>
             <small class="text-secondary">Due Date</small>
         </div>
-        <button class="btn btn-primary h-25">Take quiz</button>
+        <button class="view-quiz btn btn-primary h-25">Take quiz</button>
     </div>
     <br />
     <div class="contents-details border p-2">
@@ -58,7 +58,25 @@ filterSameData.forEach((props) => {
 	}
 });
 
+function goToQuiz() {
+	const viewquiz = document.getElementsByClassName('view-quiz');
+
+	for (let i = 0; i < viewquiz.length; i++) {
+		const button = viewquiz[i];
+
+		button.addEventListener('click', function () {
+			// Having local storage so that other javascript files can access the local data
+			localStorage.setItem('question', filterSameData[i].question);
+
+			location.href = `${filterSameData[i].quizLink}`;
+		});
+	}
+}
+
 // For javascript animation
 // We used scroll reveal library for this system
 const contents = document.querySelector('.content');
 ScrollReveal().reveal('.contents', { delay: 500 });
+
+//Calling the functions
+goToQuiz();

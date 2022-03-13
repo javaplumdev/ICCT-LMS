@@ -17,3 +17,7 @@ body {
 .div i {
 	font-size: 18px;
 }
+
+.quiz-contents {
+	max-width: 600px;
+}

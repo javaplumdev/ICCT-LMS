@@ -12,6 +12,14 @@ export let feedData = [
 			quizLengthTime: 5,
 		},
 		subjectLink: '../subjects page/subject_page.html',
+		quizLink: '../quiz page/quiz_page.html',
+		question: 'math 1',
+		questions: [
+			{
+				tanong: 'Pogi ba ako?',
+				question: 'oo',
+			},
+		],
 	},
 	{
 		subjectName: 'Math',
@@ -24,6 +32,14 @@ export let feedData = [
 			quizLengthTime: 5,
 		},
 		subjectLink: '../subjects page/subject_page.html',
+		quizLink: '../quiz page/quiz_page.html',
+		question: 'math 2',
+		questions: [
+			{
+				tanong: 'Pogi ba ako?',
+				question: 'oo',
+			},
+		],
 	},
 	{
 		subjectName: 'Filipino',
@@ -36,5 +52,13 @@ export let feedData = [
 			quizLengthTime: 5,
 		},
 		subjectLink: '../subjects page/subject_page.html',
+		quizLink: '../quiz page/quiz_page.html',
+		question: 'filipino 2',
+		questions: [
+			{
+				tanong: 'Pogi ba ako?',
+				question: 'oo',
+			},
+		],
 	},
 ];
