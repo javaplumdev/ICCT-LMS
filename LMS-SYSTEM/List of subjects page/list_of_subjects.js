@@ -4,11 +4,18 @@ import { feedData } from '../feedData.js';
 // Selectors
 const listOfSubjects = document.querySelector('.subject-container');
 
-// Printing all of subjects
-feedData.forEach((props) => {
-	const subjectsFeed = document.createElement('div');
+const filteredArr = feedData.reduce((acc, current) => {
+	const x = acc.find((item) => item.subjectName === current.subjectName);
+	if (!x) {
+		return acc.concat([current]);
+	} else {
+		return acc;
+	}
+}, []);
 
-	console.log(props.subjectName);
+// Printing all of subjects
+filteredArr.forEach((props) => {
+	const subjectsFeed = document.createElement('div');
 
 	subjectsFeed.innerHTML = `
         <div class="contents bg-light p-4 rounded mt-3 ">
@@ -38,9 +45,9 @@ function goToPage() {
 
 		button.addEventListener('click', function () {
 			// Having local storage so that other javascript files can access the local data
-			localStorage.setItem('subjectName', feedData[i].subjectName);
+			localStorage.setItem('subjectName', filteredArr[i].subjectName);
 
-			location.href = `${feedData[i].subjectLink}`;
+			location.href = `${filteredArr[i].subjectLink}`;
 		});
 	}
 }
