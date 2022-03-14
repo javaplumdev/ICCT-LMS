@@ -15,14 +15,14 @@
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<!-- Importing main style sheet -->
 		<link rel="stylesheet" href="../style.css" />
-		<title></title>
+		<title>ICCT LMS | Home page</title>
 	</head>
 	<body>
 		<!-- This will be the navbar -->
-		<header class="mb-5">
-			<nav class="navbar navbar-expand-lg bg-light navbar-light shadow">
+		<header class="mb-5" data-mdb-sticky-position="top">
+			<nav class="navbar navbar-expand-md bg-light navbar-light shadow">
 				<div class="container">
-					<a href="#" class="navbar-brand">ICCT</a>
+					<a href="#" class="navbar-brand">ICCT LMS | Exercises page</a>
 
 					<button
 						class="navbar-toggler"
@@ -56,9 +56,7 @@
 								<a href="#" class="nav-link">Messages</a>
 							</li>
 							<li class="nav-item d-block d-sm-none">
-								<a href="../exercise_page/exercise_page.html" class="nav-link"
-									>Exercises</a
-								>
+								<a href="./exercise_page.html" class="nav-link">Exercises</a>
 							</li>
 							<li class="nav-item">
 								<a href="#" class="nav-link">Logout</a>
@@ -121,7 +119,7 @@
 								</li>
 								<li class="list-unstyled mb-2">
 									<a
-										href="../exercise_page/exercise_page.html"
+										href="./exercise_page.html"
 										class="text-light text-decoration-none"
 										>Exercises</a
 									>
@@ -130,11 +128,11 @@
 						</div>
 					</div>
 					<div class="col-md-6 mx-md-2">
+						<h3 class="my-3">Exercises</h3>
+						<hr />
+
 						<!-- This is where we putting all the contents from the feed data -->
-						<div class="app-container">
-							<div class="subject-title"></div>
-							<div class="quiz-container d-flex flex-column-reverse"></div>
-						</div>
+						<div class="feed-container d-flex flex-column-reverse"></div>
 					</div>
 
 					<!--This will be empty div to avoid other divs from stretching-->
@@ -151,6 +149,6 @@
 		></script>
 
 		<!-- importing app.js -->
-		<script type="module" src="../subjects page/subject_page.js"></script>
+		<script type="module" src="./exercise_page.js"></script>
 	</body>
 </html>

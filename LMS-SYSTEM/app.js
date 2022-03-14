@@ -39,7 +39,7 @@ contentPost.addEventListener('click', function (e) {
                         <button class="btn-close" aria-label="Close"></button>
                     </div>
                     <small class="py-2">${date.getMonth()}/${date.getDate()}/${date.getFullYear()} - ${time}</small>
-                <div class="details-content border p-2">
+                <div class="details-content border py-2">
                     <p>${formContent.value}</p>
                 </div>
             </div>
@@ -119,7 +119,7 @@ function goToQuiz() {
 
 		button.addEventListener('click', function () {
 			// Having local storage so that other javascript files can access the local data
-			localStorage.setItem('question', feedData[i].question);
+			localStorage.setItem('keyId', feedData[i].keyId);
 
 			location.href = `${feedData[i].quizLinkAtHomPage}`;
 		});

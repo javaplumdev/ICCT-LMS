@@ -8,17 +8,17 @@ PAKITANONG PO SA MGA NAKATAPOS PALANG NITO
 
 ****************************************************
 
-SYSTEMS PROGESS AS OF NOW (3/11/2022 - 11:33) 
+SYSTEMS PROGESS AS OF NOW (3/14/2022 - 9:42) 
 
-Landing page(DONE) - Firmanes
+Landing page(DONE) - Firmanes & Mecarez
 Login / registration(DONE) - Mecarez
 List of Subjects(DONE) - Pascual
 Dashboard(DONE) - Mecarez
 Subject pages(DONE) - Pascual
+Exercises(WIP) - Pascual & Mecarez
 
 Profile(WIP) - Nares
 Class(WIP) - Trinidad
-Exercises(WIP) - Pascual
 Messages(WIP) - Blaza
 
 Attendance(WIP) -
