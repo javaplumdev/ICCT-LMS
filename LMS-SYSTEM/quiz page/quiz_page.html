@@ -67,18 +67,49 @@
 			</nav>
 		</header>
 
-		<!-- This is where we putting all the contents from the feed data -->
-		<div
-			class="app-container d-flex align-items-center justify-content-center p-4"
-		>
-			<div class="quiz-contents rounded w-100">
-				<div class="quiz-title bg-white shadow rounded"></div>
-				<div class="quiz-container"></div>
-				<button id="submit" class="btn btn-primary my-3 w-100 p-3"
-					>Submit</button
-				>
-			</div>
-		</div>
+		<div class="quiz-container" id="quiz">
+            <div class="quiz-header">
+                <h2 id="question">Question text</h2>
+                <ul>
+                    <li>
+                        <input
+                            type="radio"
+                            id="a"
+                            name="answer"
+                            class="answer"
+                        />
+                        <label id="a_text" for="a">Question</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            id="b"
+                            name="answer"
+                            class="answer"
+                        />
+                        <label id="b_text" for="b">Question</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            id="c"
+                            name="answer"
+                            class="answer"
+                        />
+                        <label id="c_text" for="c">Question</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            id="d"
+                            name="answer"
+                            class="answer"
+                        />
+                        <label id="d_text" for="d">Question</label>
+                    </li>
+                </ul>
+            </div>
+            <button id="submit">Submit</button>
 
 		<!-- Using bootstrap CDN -->
 		<script

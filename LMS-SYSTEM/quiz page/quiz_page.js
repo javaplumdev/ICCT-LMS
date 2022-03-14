@@ -1,99 +1,75 @@
 import { feedData } from '../feedData.js';
 const questionData = localStorage.question;
-const questionKeyInHomePage = localStorage.questionKeyInHomePage;
+
+// Global variables
+const quiz = document.getElementById('quiz');
+const answerEls = document.querySelectorAll('.answer');
+const questionEl = document.getElementById('question');
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const d_text = document.getElementById('d_text');
+const submitBtn = document.getElementById('submit');
+
+let currentQuiz = 0;
+let score = 0;
+let questions;
 
 feedData.forEach((props) => {
-	if (questionData == props.question) {
-		const questions = props.questions;
+	questions = props.questions;
+});
 
-		document.getElementsByTagName(
-			'title'
-		)[0].innerHTML = `ICCT LMS Quiz | ${props.subjectName}`;
+loadQuiz();
 
-		const quizTitle = document.querySelector('.quiz-title');
+function loadQuiz() {
+	deselectAnswers();
 
-		quizTitle.innerHTML = `
-            <div class="d-flex align-items-center justify-content-around p-4">
-                <div>
-                    <div class="row">
-                    <p>Subject: <b>${props.subjectName}</b></p>
-                    </div>
-                    <div class="row">
-                    <p>Title: ${props.quizDetails.title}</p>
-                    </div>
-                    <div class="row">
-                        <p>${props.quizDetails.instruction}</p>
-                    </div>
-                    <div class="row">
-                        <p>No. Items: ${questions.length}</p>
-                    </div>
-                </div>
-            </div>
-            
-        `;
+	const currentQuizData = questions[currentQuiz];
 
-		questions.forEach((props) => {
-			const quizContainer = document.querySelector('.quiz-container');
+	questionEl.innerText = currentQuizData.question;
+	a_text.innerText = currentQuizData.a;
+	b_text.innerText = currentQuizData.b;
+	c_text.innerText = currentQuizData.c;
+	d_text.innerText = currentQuizData.d;
+}
 
-			const quizContainerDiv = document.createElement('div');
+function getSelected() {
+	let answer = undefined;
 
-			quizContainerDiv.innerHTML = `
-                    <div class="bg-light shadow rounded p-4 my-4">
-                        <div class="d-flex align-items-center">
-                            <p >${props.questionNum})</p>
-                            <p class="mx-2" id="question">${props.question}</p>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li>
-                                <input type="radio" id="a" name="${props.questionNum}" class="answer"/>
-                                <label>${props.a}</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="b" name="${props.questionNum}" class="answer"/>
-                                <label >${props.b}</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="c" name="${props.questionNum}" class="answer"/>
-                                <label >${props.c}</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="d" name="${props.questionNum}" class="answer"/>
-                                <label>${props.d}</label>
-                            </li>
-                        </ul>
-                    </div>
-                        
-                    `;
+	answerEls.forEach((answerEl) => {
+		if (answerEl.checked) {
+			answer = answerEl.id;
+		}
+	});
 
-			quizContainer.appendChild(quizContainerDiv);
+	return answer;
+}
 
-			//quiz - contents
-			let score = 0;
+function deselectAnswers() {
+	answerEls.forEach((answerEl) => {
+		answerEl.checked = false;
+	});
+}
 
-			const submit = document.getElementById('submit');
-			const radioButtons = document.querySelectorAll(
-				`input[name="${props.questionNum}"]`
-			);
+submitBtn.addEventListener('click', () => {
+	// check to see the answer
+	const answer = getSelected();
 
-			submit.addEventListener('click', () => {
-				let answer;
+	if (answer) {
+		if (answer === questions[currentQuiz].correct) {
+			score++;
+		}
 
-				radioButtons.forEach((item) => {
-					if (item.checked) {
-						answer = item.id;
-					}
-				});
-
-				if (answer === props.correct) {
-					console.log('correct');
-					score++;
-				} else {
-					console.log('false');
-				}
-
-				console.log(`Your score is ${score} / ${questions.length}`);
-			});
-		});
+		currentQuiz++;
+		if (currentQuiz < questions.length) {
+			loadQuiz();
+		} else {
+			quiz.innerHTML = `
+                    <h2>You answered correctly at ${score}/${questions.length} questions.</h2>
+                    
+                    <button onclick="location.reload()">Reload</button>
+                `;
+		}
 	}
 });
 
