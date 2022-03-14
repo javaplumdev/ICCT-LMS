@@ -41,24 +41,24 @@ feedData.forEach((props) => {
                     <div class="bg-light shadow rounded p-4 my-4">
                         <div class="d-flex align-items-center">
                             <p >${props.questionNum})</p>
-                            <h4 class="mx-2" id="question">${props.question}</h4>
+                            <p class="mx-2" id="question">${props.question}</p>
                         </div>
                         <ul class="list-unstyled">
                             <li>
-                                <input type="radio" id="a" name="${props.questionNum}" class="answer" />
-                                <label id="a_text" for="a">${props.a}</label>
+                                <input type="radio" id="a" name="${props.questionNum}" class="answer"/>
+                                <label>${props.a}</label>
                             </li>
                             <li>
-                                <input type="radio" id="b" name="${props.questionNum}" class="answer" />
-                                <label id="b_text" for="b">${props.b}</label>
+                                <input type="radio" id="b" name="${props.questionNum}" class="answer"/>
+                                <label >${props.b}</label>
                             </li>
                             <li>
-                                <input type="radio" id="c" name="${props.questionNum}" class="answer" />
-                                <label id="c_text" for="c">${props.c}</label>
+                                <input type="radio" id="c" name="${props.questionNum}" class="answer"/>
+                                <label >${props.c}</label>
                             </li>
                             <li>
-                                <input type="radio" id="d" name="${props.questionNum}" class="answer" />
-                                <label id="d_text" for="d">${props.d}</label>
+                                <input type="radio" id="d" name="${props.questionNum}" class="answer"/>
+                                <label>${props.d}</label>
                             </li>
                         </ul>
                     </div>
@@ -66,6 +66,33 @@ feedData.forEach((props) => {
                     `;
 
 			quizContainer.appendChild(quizContainerDiv);
+
+			//quiz - contents
+			let score = 0;
+
+			const submit = document.getElementById('submit');
+			const radioButtons = document.querySelectorAll(
+				`input[name="${props.questionNum}"]`
+			);
+
+			submit.addEventListener('click', () => {
+				let answer;
+
+				radioButtons.forEach((item) => {
+					if (item.checked) {
+						answer = item.id;
+					}
+				});
+
+				if (answer === props.correct) {
+					console.log('correct');
+					score++;
+				} else {
+					console.log('false');
+				}
+
+				console.log(`Your score is ${score} / ${questions.length}`);
+			});
 		});
 	}
 });
