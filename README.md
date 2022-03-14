@@ -1,10 +1,3 @@
-KAPAG MAY TANONG PO SA CODE NA ITO 
-PAKITANONG PO SA MGA NAKATAPOS PALANG NITO
-
-**** CHARLITO MECAREZ JR ****
-**** MARK FIRMANES ****
-**** MON-MON PASCUAL ****
-
 ****************************************************
 
 SYSTEMS PROGESS AS OF NOW (3/14/2022 - 9:42) 
