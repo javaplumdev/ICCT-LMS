@@ -15,7 +15,7 @@ Login / registration(DONE) - Mecarez
 List of Subjects(DONE) - Pascual
 Dashboard(DONE) - Mecarez
 Subject pages(DONE) - Pascual
-Exercises(WIP) - Pascual & Mecarez
+Exercises(DONE) - Pascual & Mecarez
 
 Profile(WIP) - Nares
 Class(WIP) - Trinidad
