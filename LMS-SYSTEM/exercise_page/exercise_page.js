@@ -47,7 +47,7 @@ function goToQuiz() {
 
 		button.addEventListener('click', function () {
 			// Having local storage so that other javascript files can access the local data
-			localStorage.setItem('question', feedData[i].question);
+			localStorage.setItem('keyId', feedData[i].keyId);
 
 			location.href = `${feedData[i].quizLink}`;
 		});

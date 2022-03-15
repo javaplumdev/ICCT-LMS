@@ -132,7 +132,7 @@ function goToQuiz() {
 			// Having local storage so that other javascript files can access the local data
 			localStorage.setItem('keyId', feedData[i].keyId);
 
-			location.href = `${feedData[i].quizLinkAtHomPage}`;
+			location.href = `${feedData[i].quizLinkAtHomePage}`;
 		});
 	}
 }

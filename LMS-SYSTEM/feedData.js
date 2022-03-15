@@ -14,7 +14,7 @@ export let feedData = [
 		},
 		subjectLink: '../subjects page/subject_page.html',
 		quizLink: '../quiz page/quiz_page.html',
-		quizLinkAtHomPage: './quiz page/quiz_page.html',
+		quizLinkAtHomePage: './quiz page/quiz_page.html',
 		questions: [
 			{
 				questionNum: 1,
@@ -57,7 +57,7 @@ export let feedData = [
 		},
 		subjectLink: '../subjects page/subject_page.html',
 		quizLink: '../quiz page/quiz_page.html',
-		quizLinkAtHomPage: './quiz page/quiz_page.html',
+		quizLinkAtHomePage: './quiz page/quiz_page.html',
 		questions: [
 			{
 				questionNum: 1,
