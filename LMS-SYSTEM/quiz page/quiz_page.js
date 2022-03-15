@@ -20,34 +20,33 @@ let score = 0;
 let questions;
 let subjectDetails;
 
-// Using foreach in imported feedData to check some conditions below
-feedData.forEach((props) => {
-	// Assigning some variables properties from the feedData
-	questions = props.questions;
-	subjectDetails = props;
-
-	// For specific head title
-	document.getElementsByTagName(
-		'title'
-	)[0].innerHTML = `ICCT LMS | ${props.subjectName}`;
-
-	// For loading an specific questions from the key id
-	if (keyId === props.keyId) {
-		loadQuiz();
-	}
-});
+loadQuiz();
 
 // Manipulating the DOM elements usin the innertext
 function loadQuiz() {
-	const currentQuizData = questions[currentQuiz];
-	deselectAnswers();
+	// Using foreach in imported feedData to check some conditions below
+	feedData.forEach((props) => {
+		// Assigning some variables properties from the feedData
+		questions = props.questions;
 
-	questionNum.innerText = `${currentQuizData.questionNum}.) `;
-	questionElement.innerText = currentQuizData.question;
-	a_text.innerText = currentQuizData.a;
-	b_text.innerText = currentQuizData.b;
-	c_text.innerText = currentQuizData.c;
-	d_text.innerText = currentQuizData.d;
+		// For specific head title
+		document.getElementsByTagName(
+			'title'
+		)[0].innerHTML = `ICCT LMS | ${props.subjectName}`;
+
+		if (keyId == props.keyId) {
+			const currentQuizData = questions[currentQuiz];
+			deselectAnswers();
+			subjectDetails = props;
+
+			questionNum.innerText = `${currentQuizData.questionNum}.) `;
+			questionElement.innerText = currentQuizData.question;
+			a_text.innerText = currentQuizData.a;
+			b_text.innerText = currentQuizData.b;
+			c_text.innerText = currentQuizData.c;
+			d_text.innerText = currentQuizData.d;
+		}
+	});
 }
 
 // When the user clicked an radio button, the function will return its value
@@ -91,7 +90,7 @@ submitBtn.addEventListener('click', () => {
 		} else {
 			// After that code of block will show the user's score as well as the other details
 			quiz.innerHTML = `
-			<div class="contents bg-light p-4 rounded mt-3 shadow">
+			<div class="contents bg-light p-4 rounded mt-3">
 			<div class="div d-flex justify-content-between">
 				<div class="contents-titles d-flex flex-column">
 					<h4>${subjectDetails.subjectName} quiz</h4>
