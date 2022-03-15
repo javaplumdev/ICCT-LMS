@@ -77,6 +77,7 @@ contentPost.addEventListener('click', function (e) {
 // For printing all of the subjects
 feedData.forEach((props) => {
 	const subjectsFeed = document.createElement('div');
+	const moduleContainer = document.createElement('div');
 
 	subjectsFeed.innerHTML = ` 
     <div class="contents bg-light p-4 rounded mt-3 ">
@@ -92,8 +93,6 @@ feedData.forEach((props) => {
                 </div>
                     <button class="view-quiz btn btn-primary h-25">Take quiz</button>
                 </div>
-
-
                 <div class="contents-details border p-2">
                     <div class="row">
                         <div class="col">
@@ -108,7 +107,19 @@ feedData.forEach((props) => {
     </div>
     `;
 
+	moduleContainer.innerHTML = ` <div class="contents bg-light p-4 rounded mt-3">
+        <div class="div d-flex justify-content-between">
+            <div class="contents-titles d-flex flex-column">
+                <p>Subject: <b>${props.subjectName}</b></p>
+                <p>Chapter: ${props.quizDetails.chapter} module</p>
+            </div>
+            <button class="btn btn-primary h-25">View module</button>
+        </div>
+    </div>
+            `;
+
 	feedContainer.appendChild(subjectsFeed);
+	feedContainer.appendChild(moduleContainer);
 });
 
 function goToQuiz() {

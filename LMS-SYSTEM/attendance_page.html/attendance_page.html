@@ -15,14 +15,14 @@
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<!-- Importing main style sheet -->
 		<link rel="stylesheet" href="../style.css" />
-		<title></title>
+		<title>ICCT LMS | Home page</title>
 	</head>
 	<body>
 		<!-- This will be the navbar -->
-		<header class="mb-5">
-			<nav class="navbar navbar-expand-lg bg-light navbar-light shadow">
+		<header class="mb-5" data-mdb-sticky-position="top">
+			<nav class="navbar navbar-expand-md bg-light navbar-light shadow">
 				<div class="container">
-					<a href="#" class="navbar-brand">ICCT</a>
+					<a href="#" class="navbar-brand">ICCT LMS | Exercises page</a>
 
 					<button
 						class="navbar-toggler"
@@ -45,11 +45,7 @@
 								<a href="#" class="nav-link">Classes</a>
 							</li>
 							<li class="nav-item d-block d-sm-none">
-								<a
-									href="../attendance_page.html/attendance_page.html"
-									class="nav-link"
-									>Attendance</a
-								>
+								<a href="#" class="nav-link">Attendance</a>
 							</li>
 							<li class="nav-item d-block d-sm-none">
 								<a
@@ -109,7 +105,7 @@
 								</li>
 								<li class="list-unstyled mb-2">
 									<a
-										href="../attendance_page.html/attendance_page.html"
+										href="./attendance_page.html"
 										class="text-light text-decoration-none"
 										>Attendance</a
 									>
@@ -138,11 +134,15 @@
 						</div>
 					</div>
 					<div class="col-md-6 mx-md-2">
+						<form class="bg-light p-4 rounded">
+							<h3> Attendance </h3>
+						</form>
+						<hr />
+
 						<!-- This is where we putting all the contents from the feed data -->
-						<div class="app-container">
-							<div class="subject-title"></div>
-							<div class="quiz-container d-flex flex-column-reverse"></div>
-						</div>
+						<div
+							class="feed-container d-flex flex-column-reverse bg-light"
+						></div>
 					</div>
 
 					<!--This will be empty div to avoid other divs from stretching-->
@@ -159,6 +159,6 @@
 		></script>
 
 		<!-- importing app.js -->
-		<script type="module" src="../subjects page/subject_page.js"></script>
+		<script type="module" src="./attendance_page.js"></script>
 	</body>
 </html>

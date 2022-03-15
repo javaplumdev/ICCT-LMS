@@ -12,6 +12,7 @@ const filterSameData = feedData.filter((data) => {
 filterSameData.forEach((props) => {
 	if (subjectData === props.subjectName) {
 		const quizContainer = document.querySelector('.quiz-container');
+		const moduleContainer = document.createElement('div');
 		const quizContainerDiv = document.createElement('div');
 		const subjectTitle = document.querySelector('.subject-title');
 
@@ -54,7 +55,19 @@ filterSameData.forEach((props) => {
 </div>
         `;
 
+		moduleContainer.innerHTML = ` <div class="contents bg-light p-4 rounded mt-3">
+        <div class="div d-flex justify-content-between">
+            <div class="contents-titles d-flex flex-column">
+                <p>Subject: <b>${props.subjectName}</b></p>
+                <p>Chapter: ${props.quizDetails.chapter} module</p>
+            </div>
+            <button class="btn btn-primary h-25">View module</button>
+        </div>
+    </div>
+            `;
+
 		quizContainer.appendChild(quizContainerDiv);
+		quizContainer.appendChild(moduleContainer);
 	}
 });
 

@@ -42,7 +42,7 @@ function loadQuiz() {
 	const currentQuizData = questions[currentQuiz];
 	deselectAnswers();
 
-	questionNum.innerText = `${currentQuizData.questionNum}.)`;
+	questionNum.innerText = `${currentQuizData.questionNum}.) `;
 	questionElement.innerText = currentQuizData.question;
 	a_text.innerText = currentQuizData.a;
 	b_text.innerText = currentQuizData.b;
@@ -91,7 +91,7 @@ submitBtn.addEventListener('click', () => {
 		} else {
 			// After that code of block will show the user's score as well as the other details
 			quiz.innerHTML = `
-			<div class="contents bg-light p-4 rounded mt-3">
+			<div class="contents bg-light p-4 rounded mt-3 shadow">
 			<div class="div d-flex justify-content-between">
 				<div class="contents-titles d-flex flex-column">
 					<h4>${subjectDetails.subjectName} quiz</h4>

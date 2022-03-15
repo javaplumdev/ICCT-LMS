@@ -19,7 +19,7 @@ filteredArr.forEach((props) => {
 
 	subjectsFeed.innerHTML = `
         <div class="contents bg-light p-4 rounded mt-3 ">
-            <div class="div d-flex justify-content-between">
+            <div class="div d-sm-flex justify-content-between">
                 <div class="contents-titles">
                     <h4 class="subjectTitle">${props.subjectName}</h4>
 

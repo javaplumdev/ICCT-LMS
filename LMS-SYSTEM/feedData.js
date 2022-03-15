@@ -92,7 +92,7 @@ export let feedData = [
 		keyId: '3',
 		subjectName: 'Filipino',
 		quizDetails: {
-			chapter: 1,
+			chapter: 2,
 			instruction:
 				'MULTIPLE CHOICE. Read and understand the statement carefully and choose the letter of the correct answer.',
 			title: 'Basic computing',
