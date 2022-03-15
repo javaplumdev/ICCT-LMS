@@ -16,7 +16,7 @@ filteredArr.forEach((props) => {
 
 	console.log(props.subjectName);
 	attendanceDiv.innerHTML = `
-        <div class="p-4">
+        <div class="contents p-4">
             <div class="d-flex">
                 <div><h4>${props.subjectName}</h4></div>
             </div>
@@ -30,3 +30,8 @@ filteredArr.forEach((props) => {
 
 	feedContainer.appendChild(attendanceDiv);
 });
+
+// For javascript animation
+// We used scroll reveal library for this system
+const contents = document.querySelector('.content');
+ScrollReveal().reveal('.contents', { delay: 500 });
