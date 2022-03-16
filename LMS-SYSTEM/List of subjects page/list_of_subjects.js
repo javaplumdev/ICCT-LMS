@@ -52,10 +52,5 @@ function goToPage() {
 	}
 }
 
-// For javascript animations
-// We used scroll reveal library
-const contents = document.querySelector('.content');
-ScrollReveal().reveal('.contents', { delay: 500 });
-
 //Calling the functions
 goToPage();

@@ -117,8 +117,3 @@ submitBtn.addEventListener('click', () => {
 		}
 	}
 });
-
-// For javascript animation
-// We used scroll reveal library for this system
-const contents = document.querySelector('.content');
-ScrollReveal().reveal('.contents', { delay: 500 });
