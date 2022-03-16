@@ -50,12 +50,11 @@ contentPost.addEventListener('click', function (e) {
 		feedContainer.appendChild(contentMessage);
 
 		// This code is for deleting posts
-		const contentPostCollection =
-			document.getElementsByClassName('content-post');
+		const btnClose = document.getElementsByClassName('btn-close');
 
 		// When the user clicked the close button by the time it was posted, it can delete immediately
-		for (let i = 0; i < contentPostCollection.length; i++) {
-			const closeButton = contentPostCollection[i];
+		for (let i = 0; i < btnClose.length; i++) {
+			const closeButton = btnClose[i];
 
 			closeButton.addEventListener('click', function (event) {
 				const closeButtonClicked = event.target;
