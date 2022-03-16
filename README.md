@@ -8,9 +8,10 @@ List of Subjects(DONE) - Pascual
 Dashboard(DONE) - Mecarez
 Subject pages(DONE) - Pascual
 Exercises(DONE) - Pascual & Mecarez
+Attendance(DONE) - Mecarez
 
 Profile(WIP) - Nares
 Class(WIP) - Trinidad
 Messages(WIP) - Blaza
 
-Attendance(WIP) -
+
