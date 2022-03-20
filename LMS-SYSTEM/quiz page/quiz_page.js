@@ -19,6 +19,7 @@ let currentQuiz = 0;
 let score = 0;
 let questions;
 let subjectDetails;
+let currentQuizData;
 
 loadQuiz();
 
@@ -35,7 +36,7 @@ function loadQuiz() {
 		)[0].innerHTML = `ICCT LMS | ${props.subjectName}`;
 
 		if (keyId == props.keyId) {
-			const currentQuizData = questions[currentQuiz];
+			currentQuizData = questions[currentQuiz];
 			deselectAnswers();
 			subjectDetails = props;
 
@@ -77,7 +78,7 @@ submitBtn.addEventListener('click', () => {
 
 	// If the answer equals to the correctanswer from the feed data
 	if (answer) {
-		if (answer === questions[currentQuiz].correct) {
+		if (answer === currentQuizData.correct) {
 			// Will increment the score
 			score++;
 		}
