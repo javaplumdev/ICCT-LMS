@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- THIS IS THE BOOTSTRAP CDN-->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Bootstrap icons cdn -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+		/>
+
+		<!-- Importing main style sheet -->
+		<link rel="stylesheet" href="../style.css" />
+		<title>ICCT LMS | Home page</title>
+	</head>
+	<body>
+		<!-- This will be the navbar -->
+		<header class="mb-5" data-mdb-sticky-position="top">
+			<nav class="navbar navbar-expand-md bg-light navbar-light shadow">
+				<div class="container">
+					<a href="#" class="navbar-brand">ICCT LMS | Exercises page</a>
+
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navmenu"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navmenu">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item d-block d-sm-none">
+								<a href="../home_page.html" class="nav-link">Home</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="../profile page/profile_page.html" class="nav-link"
+									>Profile</a
+								>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Classes</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a
+									href="../attendance_page.html/attendance_page.html"
+									class="nav-link"
+									>Attendance</a
+								>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a
+									href="../List of subjects page/list_of_subjects.html"
+									class="nav-link"
+									>List of Subjects</a
+								>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="#" class="nav-link">Messages</a>
+							</li>
+							<li class="nav-item d-block d-sm-none">
+								<a href="./exercise_page.html" class="nav-link">Exercises</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- This will be the main section-->
+		<main class="mt-3 p-3">
+			<div class="container">
+				<div class="row">
+					<!-- This is where the dashboard will be-->
+					<div
+						class="col-md mb-2 h-100 sticky-md-top d-none d-sm-block text-light"
+					>
+						<div class="profile p-2 bg-primary rounded mb-2">
+							<p class="p-2">THIS WILL BE THE USER'S NAME</p>
+						</div>
+
+						<div class="dashboard p-2 bg-primary rounded">
+							<ul>
+								<li class="list-unstyled mb-2">
+									<a
+										href="../home_page.html"
+										class="text-light text-decoration-none"
+										>Home</a
+									>
+								</li>
+								<li class="list-unstyled mb-2">
+									<a
+										href="../profile page/profile_page.html"
+										class="text-light text-decoration-none"
+										>Profile</a
+									>
+								</li>
+
+								<li class="list-unstyled mb-2">
+									<a href="#" class="text-light text-decoration-none"
+										>Classes</a
+									>
+								</li>
+								<li class="list-unstyled mb-2">
+									<a
+										href="../attendance_page.html/attendance_page.html"
+										class="text-light text-decoration-none"
+										>Attendance</a
+									>
+								</li>
+
+								<li class="list-unstyled mb-2">
+									<a
+										href="../List of subjects page/list_of_subjects.html"
+										class="text-light text-decoration-none"
+										>List of Subjects</a
+									>
+								</li>
+								<li class="list-unstyled mb-2">
+									<a href="#" class="text-light text-decoration-none"
+										>Messages</a
+									>
+								</li>
+								<li class="list-unstyled mb-2">
+									<a
+										href="../exercise_page/exercise_page.html"
+										class="text-light text-decoration-none"
+										>Exercises</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6 mx-md-2">
+						<form class="bg-light p-4 rounded">
+							<h3> Profile </h3>
+						</form>
+						<hr />
+
+						<!-- This is where we putting all the contents from the feed data -->
+						<div class="feed-container bg-light rounded p-4">
+							<div class="profile-picture d-flex flex-column">
+								<img
+									src="https://i1.sndcdn.com/artworks-RJG4jIrv6lZwWkQH-cWi6nA-t500x500.jpg"
+									alt=""
+									class="img rounded-circle"
+								/>
+								<input type="file" class="w-50 my-4" />
+							</div>
+							<hr />
+							<form>
+								<div class="form-row">
+									<div class="form-group col-sm-6">
+										<label>First name</label>
+										<input
+											type="text"
+											class="firstname form-control border-0"
+											placeholder="User's first name"
+										/>
+									</div>
+									<div class="form-group col-sm-6">
+										<label>Last name</label>
+										<input
+											type="text"
+											class="lastname form-control border-0"
+											placeholder="User's last name"
+										/>
+									</div>
+									<div class="form-group col-sm-6">
+										<label>Email</label>
+										<input
+											type="email"
+											class="email form-control border-0"
+											placeholder="User's email name"
+										/>
+									</div>
+									<div class="form-group col-sm-6">
+										<label>Birthday</label>
+										<input
+											type="date"
+											class="date form-control border-0"
+											placeholder="User's Birthday "
+										/>
+									</div>
+									<div class="form-group col-sm-6">
+										<label>Username</label>
+										<input
+											type="text"
+											class="username form-control border-0"
+											placeholder="User's Username "
+										/>
+									</div>
+									<div class="form-group col-sm-6 position-relative">
+										<label>Password</label>
+										<input
+											type="password"
+											class="password form-control border-0"
+											placeholder="User's password"
+										/>
+										<i class="bi bi-eye-slash" id="togglePassword"></i>
+									</div>
+								</div>
+
+								<button type="button" class="save-btn btn btn-primary my-4"
+									>Save</button
+								>
+							</form>
+						</div>
+					</div>
+
+					<!--This will be empty div to avoid other divs from stretching-->
+					<div class="col-md"> </div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Using bootstrap CDN -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- importing app.js -->
+		<script type="module" src="./profile_page.js"></script>
+	</body>
+</html>
