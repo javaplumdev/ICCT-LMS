@@ -8,6 +8,7 @@
 
 body {
 	background-color: #e9ecef;
+	overflow-x: hidden;
 }
 
 .form-control {
@@ -36,4 +37,21 @@ form i {
 	right: 5%;
 
 	cursor: pointer;
+}
+
+.messages-container {
+	overflow: scroll;
+	height: 350px;
+}
+
+.inputs {
+	left: 0;
+	right: 0;
+	bottom: 5%;
+	width: inherit;
+}
+
+.inputs input {
+	border: 1px solid rgba(31, 30, 30, 0.13);
+	text-indent: 5%;
 }
