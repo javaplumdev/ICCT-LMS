@@ -38,7 +38,7 @@ contentPost.addEventListener('click', function (e) {
                         <h6>This is the user's name</h6>
                         <button class="btn-close" aria-label="Close"></button>
                     </div>
-                    <small class="py-2">${date.getMonth()}/${date.getDate()}/${date.getFullYear()} - ${time}</small>
+                    <small class="py-2 text-secondary">${date.getMonth()}/${date.getDate()}/${date.getFullYear()} - ${time}</small>
                 <div class="details-content border py-2">
                     <p>${formContent.value}</p>
                 </div>
