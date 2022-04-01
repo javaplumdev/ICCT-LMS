@@ -15,9 +15,6 @@ sendMessageButton.addEventListener('click', function () {
 	if (textContent.value === '') {
 		alert('Please enter a message');
 	} else {
-		console.log('sent!');
-		console.log(textContent.value);
-
 		const messageHolder = document.createElement('div');
 
 		messageHolder.innerHTML = `

@@ -1,8 +1,6 @@
 // Importing the feed data
 import { subjectsAvailable } from '../subjectsAvailable.js';
 
-console.log(subjectsAvailable);
-
 // Selectors
 const feedContainer = document.querySelector('.feed-container');
 
@@ -46,9 +44,12 @@ function goToPage() {
 
 		button.addEventListener('click', function () {
 			const modalBody = document.querySelector('.modal-body');
+			const modalTitle = document.querySelector('.modal-title');
+
+			modalTitle.innerHTML = subjectsAvailable[i].subjectName;
 
 			modalBody.innerHTML = `
-                <p>HELLO</p>
+                <p>All of the subjects details will be here.</p>
             `;
 
 			// Showing the modal
