@@ -11,8 +11,8 @@ Exercises(DONE) - Pascual & Mecarez
 Attendance(DONE) - Mecarez
 Profile(DONE) - Nares
 Messages(DONE) - Blaza & Mecarez
+Class(DONE) - Trinidad & Hernandez
 
-Class(WIP) - Trinidad & Hernandez
 
 
 
