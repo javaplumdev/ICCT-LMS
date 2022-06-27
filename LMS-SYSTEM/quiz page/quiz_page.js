@@ -37,6 +37,7 @@ function loadQuiz() {
 
 		if (keyId == props.keyId) {
 			currentQuizData = questions[currentQuiz];
+			console.log(currentQuizData);
 			deselectAnswers();
 			subjectDetails = props;
 
@@ -70,6 +71,8 @@ function deselectAnswers() {
 	});
 }
 
+let resultQuiz = [];
+
 // Using event listener to reload the next page
 submitBtn.addEventListener('click', () => {
 	// check to see the answer
@@ -84,31 +87,65 @@ submitBtn.addEventListener('click', () => {
 		}
 
 		// Will automatically reloads from the next page
+
+		resultQuiz.push(Object.assign(currentQuizData, { answer: answer }));
+
 		currentQuiz++;
 		if (currentQuiz < questions.length) {
 			// Will continue reloading the page until it reached its length
+
 			loadQuiz();
 		} else {
 			// After that code of block will show the user's score as well as the other details
 			quiz.innerHTML = `
 			<div class="contents bg-light p-4 rounded mt-3">
-			<div class="div d-flex justify-content-between">
-				<div class="contents-titles d-flex flex-column">
-					<h4>${subjectDetails.subjectName} quiz</h4>
-					<p>You scored <b>${score}</b> over <b>${questions.length}</b> questions.</p>
+				<div class="div d-flex justify-content-between">
+					<div class="contents-titles d-flex flex-column">
+						<h4>${subjectDetails.subjectName} quiz</h4>
+						<p>You scored <b>${score}</b> over <b>${questions.length}</b> questions.</p>
+						
+						</div>
+					<button id="go-back" class="h-25 btn btn-primary">Go back</button>
 				</div>
-				<button id="go-back" class="h-25 btn btn-primary">Go back</button>
-			</div>
-			<div class="contents-details border p-2">
-				<div class="row">
-					<p>Title: ${subjectDetails.quizDetails.title}</p>
+				<div class="contents-details border p-2">
+					<div class="row">
+						<p>Title: ${subjectDetails.quizDetails.title}</p>
+					</div>
+					<div class="row">
+						<p>${subjectDetails.quizDetails.instruction}</p>
+					</div>
 				</div>
-				<div class="row">
-					<p>${subjectDetails.quizDetails.instruction}</p>
+
+				<div class="mt-5">
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
+					<h4>Results</h4>
 				</div>
-			</div>
-		</div>   			
+			</div>   
+			
+			
+			
                 `;
+
+			localStorage.setItem('resultQuiz', JSON.stringify(resultQuiz));
+			const sample = localStorage.getItem('resultQuiz');
+
+			console.log(JSON.parse(sample));
 
 			// Then a button will show to redirect you from the home page
 			const goBackButton = document.getElementById('go-back');
