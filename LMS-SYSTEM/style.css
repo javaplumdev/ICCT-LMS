@@ -73,3 +73,11 @@ form i {
 .message-holder {
 	border-radius: 20px;
 }
+
+.success-box {
+	border: 2px solid green;
+}
+
+.wrong-text {
+	border: 2px solid red;
+}

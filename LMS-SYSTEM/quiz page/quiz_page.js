@@ -130,7 +130,7 @@ submitBtn.addEventListener('click', () => {
 						`
 						${
 							item.correct === item.answer
-								? `<div class="my-3 border p-3 rounded bg-success text-white">
+								? `<div class="success-box my-3  p-3 rounded">
 						${item.questionNum}.) ${item.question}<br>
 						A.) ${item.a}<br>
 						B.) ${item.b}<br>
@@ -142,7 +142,7 @@ submitBtn.addEventListener('click', () => {
 						Correct answer: ${item.correct}<br>
 						Your answer: ${item.answer}
 					</div>`
-								: `<div class="my-3 border p-3 rounded bg-danger text-white">
+								: `<div class="wrong-text my-3  p-3 rounded">
 					${item.questionNum}.) ${item.question}<br>
 					A.) ${item.a}<br>
 					B.) ${item.b}<br>
