@@ -4,7 +4,7 @@ export let subjectsAvailable = [
 	//******************************************************************** */
 	{
 		keyId: '124234234',
-		subjectName: 'Turuan mo ako mag mahal',
+		subjectName: 'SCIENCE',
 		quizDetails: {
 			chapter: 1,
 			instruction:
@@ -49,7 +49,7 @@ export let subjectsAvailable = [
 	},
 	{
 		keyId: '1367645',
-		subjectName: 'Sample subject',
+		subjectName: 'LIFE AND WORKS OF RIZAL',
 		quizDetails: {
 			chapter: 1,
 			instruction:
@@ -94,7 +94,7 @@ export let subjectsAvailable = [
 	},
 	{
 		keyId: '111111',
-		subjectName: 'Hatdogt',
+		subjectName: 'MATH',
 		quizDetails: {
 			chapter: 1,
 			instruction:

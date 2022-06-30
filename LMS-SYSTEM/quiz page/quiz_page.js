@@ -21,6 +21,8 @@ let questions;
 let subjectDetails;
 let currentQuizData;
 
+let currentQuizLength;
+
 loadQuiz();
 
 // Manipulating the DOM elements usin the innertext
@@ -39,7 +41,7 @@ function loadQuiz() {
 			currentQuizData = questions[currentQuiz];
 			deselectAnswers();
 			subjectDetails = props;
-
+			currentQuizLength = questions;
 			questionNum.innerText = `${currentQuizData.questionNum}.) `;
 			questionElement.innerText = currentQuizData.question;
 			a_text.innerText = currentQuizData.a;
@@ -90,9 +92,9 @@ submitBtn.addEventListener('click', () => {
 		resultQuiz.push(Object.assign(currentQuizData, { answer: answer }));
 
 		currentQuiz++;
-		if (currentQuiz < questions.length) {
+		if (currentQuiz < currentQuizLength.length) {
 			// Will continue reloading the page until it reached its length
-
+			console.log(currentQuizLength);
 			loadQuiz();
 		} else {
 			localStorage.setItem('resultQuiz', JSON.stringify(resultQuiz));
@@ -108,7 +110,9 @@ submitBtn.addEventListener('click', () => {
 			<div class="div d-flex justify-content-between">
 				<div class="contents-titles d-flex flex-column">
 					<h4>${subjectDetails.subjectName} quiz</h4>
-					<p>You scored <b>${score}</b> over <b>${questions.length}</b> questions.</p>
+					<p>You scored <b>${score}</b> over <b>${
+				currentQuizLength.length
+			}</b> questions.</p>
 					
 					</div>
 				<button id="go-back" class="h-25 btn btn-primary">Go back</button>

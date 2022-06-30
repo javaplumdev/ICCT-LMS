@@ -112,7 +112,11 @@ feedData.forEach((props) => {
                 <p>Subject: <b>${props.subjectName}</b></p>
                 <p>Chapter: ${props.quizDetails.chapter} module</p>
             </div>
-            <button class="btn btn-primary h-25">View module</button>
+            <button class="btn btn-primary h-25">
+                <a href=${props.module} target="_blank" class="text-decoration-none text-white">
+                    View module
+                </a>
+            </button>
         </div>
     </div>
             `;
